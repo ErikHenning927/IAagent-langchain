@@ -44,7 +44,7 @@ def describe_tables(self):
             description += f"Tabela '{name}' contém colunas: {columns}.\n"
         return description
 
-def table_relationships(self):
+def table_relationships():
     """Lê as relações entre tabelas (foreign keys) diretamente do banco de dados"""
     conn = db_local()
     if conn is None:

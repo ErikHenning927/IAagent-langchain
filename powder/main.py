@@ -1,9 +1,9 @@
 from langchain_openai import ChatOpenAI
 from agent import *
 from databases import *
-from process_message import *
+from process_message import process_message 
 
-
+process_message = process_message
 
 class ChatLLM:
     def __init__(self, model="gpt-4-turbo"):
@@ -11,7 +11,7 @@ class ChatLLM:
         self.chat_history = []
         self.dataframes = load_all_tables_from_db()
         create_agent(self)
-
+    process_message = process_message  # atribui a função importada como método da classe
     def run(self):
         print("Agent Powder conectado ao banco! 💬")
         print("-" * 60)
